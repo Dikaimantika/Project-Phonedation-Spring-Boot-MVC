@@ -14,38 +14,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin/payment")
 public class PaymentController {
-  private String BASE_PATH = "/admin/payment";
+	private String BASE_PATH = "/admin/payment";
 
-  @GetMapping
-  public String index() {
-    return BASE_PATH.concat("/index");
-  }
+	@GetMapping
+	public String index() {
+		return BASE_PATH.concat("/index");
+	}
 
-  @GetMapping("/create")
-  public String create() {
-    return BASE_PATH.concat("/form");
-  }
+	@GetMapping("/create")
+	public String create() {
+		return BASE_PATH.concat("/form");
+	}
 
-  @PostMapping("/create")
-  public String insert() {
-    return "redirect:".concat(BASE_PATH);
-  }
+	@PostMapping("/create")
+	public String insert() {
+		return "redirect:".concat(BASE_PATH);
+	}
 
-  @GetMapping("/edit/{id}")
-  public String edit(@PathVariable("id") long id, Model model) {
-    // TODO: add get by service
-    return BASE_PATH.concat("/form");
-  }
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable("id") long id, Model model) {
+		// TODO: add get by service
+		return BASE_PATH.concat("/form");
+	}
 
-  @PutMapping("/edit/{id}")
-  public String update(@PathVariable("id") long id, PaymentForm form) {
-    // TODO: add update service
-    return "redirect:".concat(BASE_PATH);
-  }
+	@PutMapping("/edit/{id}")
+	public String update(@PathVariable("id") long id, PaymentForm form) { // TODO: add update service return
+		"redirect:".concat(BASE_PATH);
+	}
 
-  @DeleteMapping("/remove/{id}")
-  public String delete(@PathVariable("id") long id) {
-    // TODO: add delete service
-    return "redirect:".concat(BASE_PATH);
-  }
+	@DeleteMapping("/remove/{id}")
+	public String delete(@PathVariable("id") long id) {
+		// TODO: add delete service
+		return "redirect:".concat(BASE_PATH);
+	}
 }

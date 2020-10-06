@@ -37,12 +37,11 @@ public class TransactionEWalletController {
     return BASE_PATH.concat("/form");
   }
 
-  @PutMapping("/edit/{id}")
-  public String update(@PathVariable("id") long id, TransactionEWalletForm form) {
-    // TODO: add update service
-    return "redirect:".concat(BASE_PATH);
-  }
-
+	
+	  @PutMapping("/edit/{id}") public String update(@PathVariable("id") long id,
+	  TransactionEWalletForm form) { // TODO: add update service return
+	  "redirect:".concat(BASE_PATH); }
+	 
   @DeleteMapping("/remove/{id}")
   public String delete(@PathVariable("id") long id) {
     // TODO: add delete service
